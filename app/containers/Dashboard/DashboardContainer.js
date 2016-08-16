@@ -1,13 +1,14 @@
 import React, { Component, PropTypes } from 'react'
-import { Dashboard } from 'components'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as userActions from 'actions/userActions'
+import { Dashboard, UserList } from 'components'
+
 
 class DashboardContainer extends Component {
-  constructor (props) {
-    super(props)
-  }
+  // constructor (props) {
+  //   super(props)
+  // }
 
   componentWillMount() {
     this.props.loadUsers()
@@ -20,10 +21,15 @@ class DashboardContainer extends Component {
   }
 
   render () {
+    var renderUsers = this.props.users.data.map((user, i) => {
+      return <UserList key={`user-${i+1}`} user={user} />
+    })
+    console.log(renderUsers)
     return (
       <div>
         <Dashboard />
-
+        <h2>Users</h2>
+        {renderUsers}
       </div>
     )
   }
