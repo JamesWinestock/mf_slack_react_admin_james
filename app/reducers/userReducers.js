@@ -1,12 +1,17 @@
-import { CREATE_USER } from 'actions/userActions'
+import { CREATE_USER, LOAD_USERS_SUCCESS } from 'actions/userActions'
 
-export default function userReducer (state = [], action) {
+export default function userReducer (state = {}, action) {
   switch (action.type) {
-    case CREATE_USER :
-      return [
+    case LOAD_USERS_SUCCESS :
+      return {
         ...state,
-        Object.assign({}, action.user)
-      ]
+        ...action.users,
+      }
+    case CREATE_USER :
+      return {
+        ...state,
+        user: action.user,
+      }
     default :
       return state
   }
