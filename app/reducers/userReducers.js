@@ -1,4 +1,4 @@
-import { CREATE_USER, LOAD_USERS_SUCCESS } from 'actions/userActions'
+import { CREATE_USER, LOAD_USERS_SUCCESS, ADD_USER } from 'actions/userActions'
 
 export default function userReducer (state = {}, action) {
   switch (action.type) {
@@ -6,6 +6,11 @@ export default function userReducer (state = {}, action) {
       return {
         ...state,
         ...action.users,
+      }
+    case ADD_USER :
+      return {
+        ...state,
+        ...action.user,
       }
     case CREATE_USER :
       return {

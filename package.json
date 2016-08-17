@@ -4,7 +4,7 @@
   "description": "Boilerplate for production React & Redux App",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "webpack-dev-server --host 0.0.0.0 --port 9000",
     "production": "webpack -p",
     "lint": "eslint app/.; exit 0",
     "fix": "eslint --fix app/.; exit 0"

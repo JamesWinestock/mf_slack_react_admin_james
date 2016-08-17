@@ -6,9 +6,6 @@ import { Dashboard, UserList } from 'components'
 
 
 class DashboardContainer extends Component {
-  // constructor (props) {
-  //   super(props)
-  // }
 
   componentWillMount() {
     this.props.loadUsers()
@@ -24,7 +21,7 @@ class DashboardContainer extends Component {
     var renderUsers = this.props.users.data.map((user, i) => {
       return <UserList key={`user-${i+1}`} user={user} />
     })
-    console.log(renderUsers)
+    // console.log(renderUsers)
     return (
       <div>
         <Dashboard />
