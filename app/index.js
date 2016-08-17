@@ -6,7 +6,7 @@ import routes from 'config/routes'
 import { loadUsers, addAndSaveUser } from './actions/userActions'
 
 const store = configureStore()
-store.dispatch(loadUsers())
+// store.dispatch(loadUsers())
 // store.dispatch(addAndSaveUser())
 
 ReactDOM.render(
