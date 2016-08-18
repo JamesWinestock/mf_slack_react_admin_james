@@ -19,7 +19,7 @@ function loadUsersSuccess (users) {
 // https://jsonplaceholder.typicode.com/users
 export function loadUsers () {
   return function (dispatch) {
-    return axios.get('https://express-rethinkb-compose.herokuapp.com/users/').then(users => {
+    return axios.get('http://localhost:3000').then(users => {
       // console.log(getState().users)
       dispatch(loadUsersSuccess(users))
     }).catch(error => {

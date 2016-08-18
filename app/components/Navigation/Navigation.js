@@ -7,6 +7,7 @@ export default function Navigation () {
       <IndexLink to='/' activeClassName='active'>Home</IndexLink>
       { " | " }
       <Link to='dashboard' activeClassName='active'>Dashboard</Link>
+      <Link to='NewUser' activeClassName='active'>NewUser</Link>
     </nav>
   )
 }
